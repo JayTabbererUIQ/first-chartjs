@@ -26,7 +26,8 @@ const pollData=[
     },
 
 ];
-
+Chart.defaults.global.defaultFontFamily = '"Comic Sans MS", cursive, sans-serif';
+// Above sets a global font, if no other font has been specified, this is the font that should run.
 
 const ctx = document.getElementById('chart').getContext('2d');
 const pollChart = new Chart(ctx, {
@@ -50,8 +51,23 @@ const pollChart = new Chart(ctx, {
                 }
             }]
         },
+        title: {
+            display: true,
+            text: 'A chart of some names',
+            fontColor: "#333",
+            fontSize: 20,
+            padding: 20,
+        },
         legend: {
-            display: false //removing the label at the top of the chart
+            display: false, // Set the legend to on or off (boolean value)
+
+            /*
+            position: "right", // Set the position of the legend
+            labels: {
+                padding: 20, // adding padding to the legends, 10px is standard.
+            }
+            */
+            // Above commented out code is an example from for the 'pie' and 'doughnut' charts.
         }
     }
 });
