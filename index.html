@@ -6,11 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <script src="index.js" defer></script>
-    <title>Document</title>
+    <title>Chart js Practice</title>
 </head>
 <body>
+    <h1>Chart results</h1>
+<!--  containing the chart inside a container allows us to set sizing, otherwise it would take up the container of 'body'  -->
+    <div class="chart-container">
+        <canvas id="chart" width="400"  height="400"></canvas>
+<!--   changing aspect ratio inside the CSS may cause a problem due to the set w & h in the canvas element      -->
+    </div>
+
 
 </body>
 </html>
