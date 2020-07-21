@@ -26,6 +26,24 @@ const pollData=[
     },
 
 ];
+
+const pollForm = document.querySelector("#pollForm");
+
+
+const pollFormSubmit = (event) => {
+    event.preventDefault();
+    const pollOptionInput = pollForm.querySelector("input[name='pollOptions']:checked");
+    if (pollOptionInput) {
+        const pollOptionValue = pollOptionInput.value;
+        pollData.find(pollOption => pollOption.option === pollOptionValue).votes++;
+        pollChart.data.datasets[0].data = pollData.map(pollOption => pollOption.votes)
+        pollChart.update();
+        pollForm.reset();
+    }
+}
+pollForm.addEventListener("submit", pollFormSubmit);
+// *bug note* this line was previously above the function, pollFormSubmit doesn't exist before the function, moving below corrected error.
+
 Chart.defaults.global.defaultFontFamily = '"Comic Sans MS", cursive, sans-serif';
 // Above sets a global font, if no other font has been specified, this is the font that should run.
 
